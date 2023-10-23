@@ -1,0 +1,60 @@
+[project]
+name = "price-scraper"
+description = "Website scraping and price notification via a Python Package"
+# dynamic = ["version"]
+version = "1.0.0"
+readme = "README.md"
+authors = [
+    {name = "Andrea Hrelja", email = "andhrelja@hotmail.com"}
+]
+maintainers = [
+    {name = "Andrea Hrelja", email = "andhrelja@hotmail.com"}
+]
+requires-python = ">=3.11"
+dependencies=[
+    "requests"
+]
+keywords = ["product", "price", "track", "price-tracker", "media-world", "unieuro"]
+classifiers = [
+    "Development Status :: 3 - Developing",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Entertainment"
+]
+
+[tool.setuptools.packages.find]
+include = [
+    "price_scraper",
+    "price_scraper.config",
+    "price_scraper.models",
+    "price_scraper.repository",
+    "price_scraper.services",
+    "price_scraper.utils",
+]
+
+# [tool.setuptools.dynamic]
+# version = {attr = "price_scraper.__version__"}
+
+[project.urls]
+Documentation="https://github.com/andhrelja/price_scraper/blob/master/docs/build/markdown/index.md"
+Source="https://github.com/andhrelja/price_scraper"
+Issues="https://github.com/andhrelja/price_scraper/issues"
+Changelog="https://github.com/andhrelja/price_scraper/blob/master/CHANGELOG.md"
+
+[project.optional-dependencies]
+docs = [
+    "Sphinx>=5.3.0, <6",
+    "myst-parser==0.18.1",
+    "sphinx-markdown-builer==0.5.5",
+    "sphinx-rtd-theme==0.5.1"
+]
+
+[build-system]
+requires = [
+    "setuptools>=61",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,50 @@
+{
+    "products": [
+        {
+            "name": "Apple iPhone 15 Pro, 256GB, 6,1\"",
+            "jobs": [
+                {
+                    "is_active": false,
+                    "service": "mediaworld",
+                    "protocol": "https://",
+                    "parser": "application/ld+json",
+                    "host": "mediaworld.it",
+                    "port": "",
+                    "prefix": "it/product/_apple-iphone-15-pro-256gb-titanio-nero-188294.html"
+                },
+                {
+                    "is_active": true,
+                    "service": "unieuro",
+                    "protocol": "https://",
+                    "parser": "application/ld+json",
+                    "host": "unieuro.it",
+                    "port": "",
+                    "prefix": "online/iPhone/iPhone-15-Pro-256GB-Titanio-Blu-pidAPLIPHONE15PRO256B"
+                },
+                {
+                    "is_active": true,
+                    "service": "nabava",
+                    "protocol": "https://",
+                    "parser": "application/ld+json",
+                    "host": "nabava.net",
+                    "port": "",
+                    "prefix": "mobiteli/apple-iphone-15-pro-cijena-256gb-61-479495861"
+                }
+            ]
+        },
+        {
+            "name": "Lenovo IdeaPad/IdeaPad 3, 15.6\" 1920x1080, 512GB SSD, 16GB RAM, AMD Radeon, Free DOS/No OS",
+            "jobs": [
+                {
+                    "is_active": true,
+                    "service": "nabava",
+                    "protocol": "https://",
+                    "parser": "application/ld+json",
+                    "host": "nabava.net",
+                    "port": "",
+                    "prefix": "prijenosna-racunala/lenovo-ideapad-ideapad-3-15alc6-cijena-82ku026nsc-156-1920x1080-512gb-ssd-476493131"
+                }
+            ]
+        }
+    ]
+}
