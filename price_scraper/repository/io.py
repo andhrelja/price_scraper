@@ -1,17 +1,28 @@
 from typing import Iterable
+import csv
+
 from .base import Repository
-from io import StringIO
-from io import FileIO
+from ..config import BASE_DIR
+
+IO_DIR = BASE_DIR.parent / 'data'
 
 class IORepository(Repository):
-    def __init__(self, file_name: str, s_io: StringIO, mode: str='a+') -> None:
-        self.f_io = FileIO(file_name, mode=mode)
-        self.s_io = s_io
+    mode: str='a+'
+    encoding: str='utf-8'
+    file_ext: str='.csv'
     
+    def __init__(self, table_name: str, **kwargs) -> None:
+        self.file_path = IO_DIR / (table_name + self.file_ext)
+        self.header = kwargs.get('header', [])
+        self.delimiter = kwargs.get('delimiter', ',')
+        self.newline = kwargs.get('newline', '\n')
+        
     def add(self, row: str) -> None:
-        self.s_io.write(row + '\n')
-        self.f_io.write(self.s_io.getvalue().encode())
+        with open(self.file_path, mode=self.mode, encoding=self.encoding, newline=self.newline) as fp:
+            dw = csv.DictWriter(f=fp, fieldnames=self.header, delimiter=self.delimiter)
+            dw.writerow(row)
     
     def list(self) -> Iterable:
-        self.s_io.seek(0)
-        return self.s_io.readlines()
+        with open(self.file_path, mode='r', encoding=self.encoding, newline=self.newline) as fp:
+            dr = csv.DictReader(f=fp, fieldnames=self.header, delimiter=self.delimiter)
+            return list(dr)

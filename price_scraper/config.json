@@ -2,47 +2,76 @@
     "products": [
         {
             "name": "Apple iPhone 15 Pro, 256GB, 6,1\"",
+            "short_name": "Apple iPhone 15 Pro, 256GB",
             "jobs": [
                 {
                     "is_active": false,
                     "service": "mediaworld",
                     "protocol": "https://",
-                    "parser": "application/ld+json",
                     "host": "mediaworld.it",
                     "port": "",
-                    "prefix": "it/product/_apple-iphone-15-pro-256gb-titanio-nero-188294.html"
+                    "prefix": "it/product/_apple-iphone-15-pro-256gb-titanio-nero-188294.html",
+                    "headers": {
+                        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+                        "Accept-Encoding": "gzip, deflate, br",
+                        "Accept-Language": "en-US,en;q=0.9",
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.46"
+                    }
                 },
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "unieuro",
                     "protocol": "https://",
-                    "parser": "application/ld+json",
                     "host": "unieuro.it",
                     "port": "",
                     "prefix": "online/iPhone/iPhone-15-Pro-256GB-Titanio-Blu-pidAPLIPHONE15PRO256B"
                 },
                 {
                     "is_active": true,
-                    "service": "nabava",
+                    "service": "mobileshop",
                     "protocol": "https://",
-                    "parser": "application/ld+json",
-                    "host": "nabava.net",
+                    "host": "mobileshop.eu",
                     "port": "",
-                    "prefix": "mobiteli/apple-iphone-15-pro-cijena-256gb-61-479495861"
+                    "prefix": "hr/apple/mobiteli/iphone-15-pro-5g-dual-esim-256gb-8gb-ram-titanium/"
+                },
+                {
+                    "is_active": true,
+                    "service": "links",
+                    "protocol": "https://",
+                    "host": "links.hr",
+                    "port": "",
+                    "prefix": "hr/laptop-lenovo-ideapad-3-82ku026nsc-ryzen-7-5700u-16gb-512gb-ssd-amd-radeon-graphics-15-6-fhd-ips-bez-os-plavi-010101892?utm_source=nabava.net&utm_campaign=nabava.net&utm_medium=click"
                 }
             ]
         },
         {
             "name": "Lenovo IdeaPad/IdeaPad 3, 15.6\" 1920x1080, 512GB SSD, 16GB RAM, AMD Radeon, Free DOS/No OS",
+            "short_name": "Lenovo IdeaPad 3",
             "jobs": [
                 {
                     "is_active": true,
                     "service": "nabava",
                     "protocol": "https://",
-                    "parser": "application/ld+json",
                     "host": "nabava.net",
                     "port": "",
                     "prefix": "prijenosna-racunala/lenovo-ideapad-ideapad-3-15alc6-cijena-82ku026nsc-156-1920x1080-512gb-ssd-476493131"
+                },
+                {
+                    "is_active": true,
+                    "service": "instar",
+                    "protocol": "https://",
+                    "host": "instar-informatika.hr",
+                    "port": "",
+                    "prefix": "notebook-lenovo-ideapad-ultraslim-3-82ku026nsc-156-fhd-ips-amd-ry/212437/product/?utm_source=nabava.net&utm_campaign=nabava.net&utm_medium=click"
+                }
+                ,
+                {
+                    "is_active": true,
+                    "service": "links",
+                    "protocol": "https://",
+                    "host": "links.hr",
+                    "port": "",
+                    "prefix": "hr/laptop-lenovo-ideapad-3-82ku026nsc-ryzen-7-5700u-16gb-512gb-ssd-amd-radeon-graphics-15-6-fhd-ips-bez-os-plavi-010101892?utm_source=nabava.net&utm_campaign=nabava.net&utm_medium=click"
                 }
             ]
         }

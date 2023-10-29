@@ -1,3 +1,4 @@
+from typing import Optional
 from dataclasses import dataclass, asdict
 from pathlib import Path
 
@@ -17,6 +18,7 @@ BASE_DIR = Path.resolve(Path(__file__)).parent.parent
 @dataclass
 class Config(Meta):
     product_name: str
+    product_short_name: str
     jobs: list
 
 @dataclass
@@ -24,9 +26,10 @@ class Job(Meta):
     is_active: bool
     service: str
     protocol: str
-    parser: str
+    # parser: str
     host: str
     port: str
     prefix: str
+    headers: Optional[dict] = None
 
 
