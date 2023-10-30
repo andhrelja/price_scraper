@@ -23,8 +23,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install .
           
-      - name: execute py script # run main.py
+      - name: execute price_scraper # run main.py
         run: python -m price_scraper
+
+      - name: generate report
+        run: python reports/make.py
           
       - name: commit files
         run: |
