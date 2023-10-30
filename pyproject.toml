@@ -15,7 +15,8 @@ dependencies=[
     "requests",
     "beautifulsoup4",
     "sqlalchemy",
-    "pandas"
+    "pandas",
+    "matplotlib"
 ]
 keywords = ["product", "price", "track", "price-tracker", "media-world", "unieuro"]
 classifiers = [
