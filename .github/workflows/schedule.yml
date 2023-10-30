@@ -24,11 +24,10 @@ jobs:
           pip install .
           
       - name: execute price_scraper # run main.py
-        run: python -m price_scraper
+        run: | 
+          python -m price_scraper
+          python reports/make.py
 
-      - name: generate report
-        run: python reports/make.py
-          
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
