@@ -12,7 +12,8 @@ maintainers = [
 ]
 requires-python = ">=3.11"
 dependencies=[
-    "requests"
+    "requests",
+    "sqlalchemy"
 ]
 keywords = ["product", "price", "track", "price-tracker", "media-world", "unieuro"]
 classifiers = [
