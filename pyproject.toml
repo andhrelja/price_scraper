@@ -34,6 +34,7 @@ include = [
     "price_scraper",
     "price_scraper.config",
     "price_scraper.models",
+    "price_scraper.models.db",
     "price_scraper.repository",
     "price_scraper.services",
     "price_scraper.utils",
