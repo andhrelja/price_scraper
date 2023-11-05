@@ -28,7 +28,11 @@ def make():
             ['created_date', 'source']
         ).mean(numeric_only=True).reset_index()
         plt_df = plt_df.pivot(index='created_date', columns='source', values='price')
-        plt_df.plot(ax=ax[i][0], title=product_name)
+        plt_df.plot(ax=ax[i][0], title=product_name, rot=30)
+        ax[i][0].set_xlabel('Price date')
+        # handles, labels = ax[i][0].get_legend_handles_labels()
+        # ax[i][0].legend(handles=handles[1:], labels=labels[1:])
+    fig.tight_layout()
     plt.savefig(IO_DIR / 'index.svg', format='svg')
     logger.info("Report generated successfully")
 
