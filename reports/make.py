@@ -1,10 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import logging
 
 from price_scraper import Repository
 from price_scraper.repository.io import IO_DIR
 
 IO_DIR = IO_DIR.parent / 'reports'
+logger = logging.getLogger('reports.make')
 
 dtypes = dict(
     short_name='string', 
@@ -28,6 +30,7 @@ def make():
         plt_df = plt_df.pivot(index='created_date', columns='source', values='price')
         plt_df.plot(ax=ax[i][0], title=product_name)
     plt.savefig(IO_DIR / 'index.svg', format='svg')
+    logger.info("Report generated successfully")
 
 
 if __name__ == '__main__':
