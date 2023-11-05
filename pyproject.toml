@@ -12,7 +12,11 @@ maintainers = [
 ]
 requires-python = ">=3.11"
 dependencies=[
-    "requests"
+    "requests",
+    "beautifulsoup4",
+    "sqlalchemy",
+    "pandas",
+    "matplotlib"
 ]
 keywords = ["product", "price", "track", "price-tracker", "media-world", "unieuro"]
 classifiers = [
@@ -30,6 +34,7 @@ include = [
     "price_scraper",
     "price_scraper.config",
     "price_scraper.models",
+    "price_scraper.models.db",
     "price_scraper.repository",
     "price_scraper.services",
     "price_scraper.utils",
