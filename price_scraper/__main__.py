@@ -1,6 +1,8 @@
 import importlib
 import logging
+import os
 import json
+import argparse
 
 from price_scraper.utils.io import read_json
 from price_scraper.utils import requests
@@ -12,8 +14,14 @@ from price_scraper import services
 logger = logging.getLogger(__package__)
 logger.setLevel(logging.INFO)
 
-if __name__ == '__main__':
-    configs = read_json(config.BASE_DIR / 'config.json')
+PR_NAME = 'price_scraper'
+PR_DESC = 'Scrape pre-configured websites for product prices'
+CL_ARGS = (
+    (('-l', '--all'), dict(action="store_true", 
+                           help='Scrape all products',)),
+)
+
+def all_list(configs):
     for product_cfg in configs['products']:
         jobs = map(lambda job: config.Job(**job), product_cfg['jobs'])
         cfg = config.Config(product_name=product_cfg['name'],
@@ -37,3 +45,26 @@ if __name__ == '__main__':
             product = service.apply(response.text, name=cfg.product_name, short_name=cfg.product_short_name, source=job.host)
             Repository.add(product.asdict())
     logger.info(json.dumps(Repository.list(), indent=1, default=str))
+
+CL_MAPS = {
+    'all': all_list
+}
+    
+
+if __name__ == '__main__':
+    logger.info(json.dumps(dict(os.environ), indent=2))
+    
+    configs = read_json(config.BASE_DIR / 'config.json') # TODO: imporlib_resource
+    parser = argparse.ArgumentParser(prog=PR_NAME, description=PR_DESC)
+    for args, kwargs in CL_ARGS:
+        logger.debug(args, kwargs)
+        parser.add_argument(*args, **kwargs)
+    args = parser.parse_args()
+    kwargs = vars(args)
+    logger.debug("Parsed args: %s", args)
+    
+    for fn in CL_MAPS:
+        if getattr(args, fn):
+            ex = CL_MAPS[fn]
+            ex(configs)
+    

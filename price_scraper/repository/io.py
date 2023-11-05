@@ -1,10 +1,13 @@
 from typing import Iterable
+from pathlib import Path
+import os
 import csv
 
 from .base import Repository
 from ..config import BASE_DIR
 
-IO_DIR = BASE_DIR.parent / 'data'
+IO_DIR_NAME = os.getenv('GITHUB_WORKSPACE', BASE_DIR.parent)
+IO_DIR = Path(IO_DIR_NAME) / 'data'
 
 class IORepository(Repository):
     mode: str='a+'
