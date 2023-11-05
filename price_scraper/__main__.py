@@ -52,7 +52,7 @@ CL_MAPS = {
     
 
 if __name__ == '__main__':
-    logger.info(json.dumps(dict(os.environ), indent=2))
+    # logger.info(json.dumps(dict(os.environ), indent=2))
     
     configs = read_json(config.BASE_DIR / 'config.json') # TODO: imporlib_resource
     parser = argparse.ArgumentParser(prog=PR_NAME, description=PR_DESC)
