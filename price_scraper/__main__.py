@@ -34,7 +34,6 @@ def all_list(configs):
             url = "{protocol}{host}{port}/{prefix}".format(**job.asdict())
             logger.info("GET %s", url)
             response = requests.get(url, headers=job.headers)
-
             if response.status_code == 404:
                 logger.warning("Page not found: %s", url)
                 continue
