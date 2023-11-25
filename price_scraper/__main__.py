@@ -36,7 +36,7 @@ def all_list(configs):
             response = requests.get(url, headers=job.headers)
 
             if response.status_code == 404:
-                logger.error("Page not found: %s", url)
+                logger.warning("Page not found: %s", url)
                 continue
             
             try:
