@@ -5,10 +5,7 @@ description = "Website scraping and price notification via a Python Package"
 version = "1.0.0"
 readme = "README.md"
 authors = [
-    {name = "Andrea Hrelja", email = "andhrelja@hotmail.com"}
-]
-maintainers = [
-    {name = "Andrea Hrelja", email = "andhrelja@hotmail.com"}
+    {name = "Andrea Hrelja", email = "andhrelja@gmail.com"}
 ]
 requires-python = ">=3.11"
 dependencies=[

@@ -1,6 +1,7 @@
 """HTML - <script type="application/ld+json">
 ==========================================
 """
+
 from typing import Iterable, Union
 from bs4 import BeautifulSoup
 import json
@@ -10,7 +11,7 @@ import os
 from .. import models
 
 logger = logging.getLogger(__name__)
-logger.setLevel(os.getenv('LOG_LEVEL', logging.DEBUG))
+logger.setLevel(os.getenv("LOG_LEVEL", logging.DEBUG))
 
 SCRIPT_INDEX = 0
 
@@ -30,12 +31,13 @@ SCRIPT_INDEX = 0
 #     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.46'
 # }
 
-def html_parser(html_text: str, features='html.parser') -> Iterable:
+
+def html_parser(html_text: str, features="html.parser") -> Iterable:
     soup = BeautifulSoup(html_text, features)
-    scripts = soup.findAll('script', type='application/ld+json')
+    scripts = soup.findAll("script", type="application/ld+json")
     return json.loads(scripts[SCRIPT_INDEX].string)
+
 
 def apply(html_text: str, **kwargs) -> Union[None, models.Product]:
     parsed = html_parser(html_text)
-    return models.Product(price=parsed['object']['offers']['price'], **kwargs)
-    
+    return models.Product(price=parsed["object"]["offers"]["price"], **kwargs)

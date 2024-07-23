@@ -1,0 +1,29 @@
+name: Run Scraper
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    name: "Run price_scraper"
+    runs-on: self-hosted
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4 # checkout the repository content to github runner
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          
+      - name: Install price_scraper
+        run: pip install .
+          
+      - name: Run price_scraper # run main.py
+        env:
+          PRICE_SCRAPER_IO_OUTPUT: '/Users/andhrelja/Local/Private/price_scraper/data'
+        run: |
+          python -m price_scraper --all
+          python reports/make.py

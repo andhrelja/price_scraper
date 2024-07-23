@@ -3,6 +3,7 @@ import requests
 
 logger = logging.getLogger(__name__)
 
+
 def get(url, *args, **kwargs):
     # client = httpx.Client(http2=True)
     response = requests.get(url, *args, **kwargs)

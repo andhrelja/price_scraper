@@ -3,6 +3,7 @@ from datetime import datetime
 
 import json
 
+
 class JSONMeta:
     def asdict(self):
         return asdict(self)

@@ -4,15 +4,16 @@ from pathlib import Path
 
 import json
 
+
+BASE_DIR = Path.resolve(Path(__file__)).parent.parent
+
+
 class Meta:
     def asdict(self):
         return asdict(self)
-    
+
     def __repr__(self) -> str:
         return json.dumps(self.asdict(), indent=2)
-
-
-BASE_DIR = Path.resolve(Path(__file__)).parent.parent
 
 
 @dataclass
@@ -20,6 +21,7 @@ class Config(Meta):
     product_name: str
     product_short_name: str
     jobs: list
+
 
 @dataclass
 class Job(Meta):
@@ -31,5 +33,3 @@ class Job(Meta):
     port: str
     prefix: str
     headers: Optional[dict] = None
-
-

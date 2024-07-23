@@ -2,7 +2,7 @@
     "products": [
         {
             "name": "Apple iPhone 15 Pro, 256GB, 6,1\"",
-            "short_name": "Apple iPhone 15 Pro, 256GB",
+            "short_name": "Apple iPhone 15 Pro",
             "jobs": [
                 {
                     "is_active": false,
@@ -24,7 +24,7 @@
                     "protocol": "https://",
                     "host": "unieuro.it",
                     "port": "",
-                    "prefix": "online/iPhone/iPhone-15-Pro-256GB-Titanio-Blu-pidAPLIPHONE15PRO256B"
+                    "prefix": "online/iPhone/iPhone-15-Pro-256GB-Titanio-Nero-pidAPLIPHONE15PRO256"
                 },
                 {
                     "is_active": true,
@@ -32,7 +32,7 @@
                     "protocol": "https://",
                     "host": "mobileshop.eu",
                     "port": "",
-                    "prefix": "hr/apple/mobiteli/iphone-15-pro-5g-dual-esim-256gb-8gb-ram-titanium/"
+                    "prefix": "hr/apple/mobiteli/iphone-15-pro-5g-dual-esim-256gb-8gb-ram-titanium-bijeli/"
                 },
                 {
                     "is_active": true,
@@ -40,7 +40,15 @@
                     "protocol": "https://",
                     "host": "links.hr",
                     "port": "",
-                    "prefix": "hr/smartphone-apple-iphone-15-6-1-6gb-256gb-ios-crni-010301612"
+                    "prefix": "hr/smartphone-apple-iphone-15-pro-6-1-8gb-256gb-ios-sivi-010301643"
+                },
+                {
+                    "is_active": true,
+                    "service": "instar",
+                    "protocol": "https://",
+                    "host": "instar-informatika.hr",
+                    "port": "",
+                    "prefix": "mobitel-apple-iphone-15-pro-128gb-natural-titanium/213411/product/"
                 },
                 {
                     "is_active": true,
@@ -53,24 +61,22 @@
             ]
         },
         {
-            "name": "Lenovo IdeaPad/IdeaPad 3, 15.6\" 1920x1080, 512GB SSD, 16GB RAM, AMD Radeon, Free DOS/No OS",
-            "short_name": "Lenovo IdeaPad 3",
+            "name": "Samsung Galaxy S24, 256GB, 6.2",
+            "short_name": "Samsung Galaxy S24",
             "jobs": [
                 {
-                    "is_active": true,
-                    "service": "nabava",
+                    "is_active": false,
+                    "service": "mediaworld",
                     "protocol": "https://",
-                    "host": "nabava.net",
+                    "host": "mediaworld.it",
                     "port": "",
-                    "prefix": "prijenosna-racunala/lenovo-ideapad-ideapad-3-15alc6-cijena-82ku026nsc-156-1920x1080-512gb-ssd-476493131"
-                },
-                {
-                    "is_active": true,
-                    "service": "instar",
-                    "protocol": "https://",
-                    "host": "instar-informatika.hr",
-                    "port": "",
-                    "prefix": "notebook-lenovo-ideapad-ultraslim-3-82ku026nsc-156-fhd-ips-amd-ry/212437/product/?utm_source=nabava.net&utm_campaign=nabava.net&utm_medium=click"
+                    "prefix": "it/product/_samsung-galaxy-s24-256gb-256-gb-gray-223924.html",
+                    "headers": {
+                        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+                        "Accept-Encoding": "gzip, deflate, br",
+                        "Accept-Language": "en-US,en;q=0.9",
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.46"
+                    }
                 },
                 {
                     "is_active": true,
@@ -78,7 +84,15 @@
                     "protocol": "https://",
                     "host": "links.hr",
                     "port": "",
-                    "prefix": "hr/laptop-lenovo-ideapad-3-82ku026nsc-ryzen-7-5700u-16gb-512gb-ssd-amd-radeon-graphics-15-6-fhd-ips-bez-os-plavi-010101892?utm_source=nabava.net&utm_campaign=nabava.net&utm_medium=click"
+                    "prefix": "hr/smartphone-samsung-galaxy-s24-6-2-8gb-256gb-android-14-sivi-010301814"
+                },
+                {
+                    "is_active": true,
+                    "service": "instar",
+                    "protocol": "https://",
+                    "host": "instar-informatika.hr",
+                    "port": "",
+                    "prefix": "mobitel-samsung-galaxy-s24-62-120hz-8gb-ram-256gb-memorija-5g-o/226177/product/"
                 },
                 {
                     "is_active": true,
@@ -86,29 +100,43 @@
                     "protocol": "https://",
                     "host": "mikronis.hr",
                     "port": "",
-                    "prefix": "Proizvod/lenovo-ideapad-3-82h803f2sc-15-6-fullhd-intel-core-i5-1155g7-16gb-512gb-ssd-w11h-intel-iris-xe-graphics/39240"
+                    "prefix": "Proizvod/samsung-galaxy-s24-6-2-8-256gb-amber-yellow-sm-s921bzygeue/41961"
+                },
+                {
+                    "is_active": true,
+                    "service": "nabava",
+                    "protocol": "https://",
+                    "host": "nabava.net",
+                    "port": "",
+                    "prefix": "mobiteli/samsung-galaxy-s24-cijena-256gb-62-517038971"
                 }
             ]
         },
         {
-            "name": "HP 15-fd0007nm, 15,6 FHD IPS, Intel Core i5 1335U, 16GB RAM, 512GB PCIe NVMe SSD, Intel Iris Xe Graphics, Free DOS",
-            "short_name": "HP 15-fd0007nm",
+            "name": "GARMIN Forerunner 165, smartwatch",
+            "short_name": "GARMIN Forerunner 165",
             "jobs": [
                 {
-                    "is_active": true,
-                    "service": "nabava",
+                    "is_active": false,
+                    "service": "mediaworld",
                     "protocol": "https://",
-                    "host": "nabava.net",
+                    "host": "mediaworld.it",
                     "port": "",
-                    "prefix": "nekategorizirano/hp-15-fd0007nm-cijena-876n5ea-156-fhd-ips-464614631"
+                    "prefix": "it/product/_garmin-forerunner-nero-231886.html",
+                    "headers": {
+                        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+                        "Accept-Encoding": "gzip, deflate, br",
+                        "Accept-Language": "en-US,en;q=0.9",
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.46"
+                    }
                 },
                 {
                     "is_active": true,
-                    "service": "instar",
+                    "service": "unieuro",
                     "protocol": "https://",
-                    "host": "instar-informatika.hr",
+                    "host": "unieuro.it",
                     "port": "",
-                    "prefix": "notebook-hp-15-fd0007nm-876n5ea-156-fhd-ips-intel-core-i5-1335u-u/207817/product/"
+                    "prefix": "online/Smartwatch/Forerunner-165-pidGARFORERUNNER165MGW"
                 },
                 {
                     "is_active": true,
@@ -116,15 +144,15 @@
                     "protocol": "https://",
                     "host": "links.hr",
                     "port": "",
-                    "prefix": "hr/laptop-hp-15-fd0007nm-876n5ea-core-i5-1335u-16gb-512gb-ssd-hd-graphics-15-6-fhd-ips-freedos-srebrni-010101817"
+                    "prefix": "hr/pametni-sat-garmin-forerunner-165-gps-bijeli-060100617"
                 },
                 {
                     "is_active": true,
-                    "service": "mikronis",
+                    "service": "nabava",
                     "protocol": "https://",
-                    "host": "mikronis.hr",
+                    "host": "nabava.net",
                     "port": "",
-                    "prefix": "Proizvod/hp-15-fd0007nm-intel-core-i5-1335u-4-6ghz-16gb-512gb-ssd-freedos-15-6-full-hd-intel-iris-xe-graphics-p-n-876n5ea/39333"
+                    "prefix": "pametni-satovi/garmin-forerunner-165-pametni-sat-cijena-bijeli-crni-sivi-528609851"
                 }
             ]
         }
