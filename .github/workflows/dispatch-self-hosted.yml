@@ -12,16 +12,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4 # checkout the repository content to github runner
 
-      # - name: Setup Python 3.12
-      #   uses: actions/setup-python@v4
-      #   with:
-      #     python-version: '3.12'
-      #     cache: 'pip'
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version-file: 'pyproject.toml'
+          cache: 'pip'
           
       - name: Install price_scraper
-        run: |
-          workon 3.12
-          pip install .
+        run: pip install .
           
       - name: Run price_scraper # run main.py
         env:

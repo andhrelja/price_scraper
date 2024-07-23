@@ -14,10 +14,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4 # checkout the repository content to github runner
 
-      - name: Setup Python 3.11
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11' # install the python version needed
+          python-version-file: 'pyproject.toml'
           cache: 'pip'
           
       - name: Install price_scraper
