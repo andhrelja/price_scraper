@@ -64,7 +64,7 @@ def scrape_all_products(configs):
             )
             Repository.add(product.asdict())
 
-    logger.info(json.dumps(Repository.list(), indent=1, default=str))
+    logger.info("Updated records: %s", len(Repository.list()))
 
 
 CL_MAPS = {"all": scrape_all_products}

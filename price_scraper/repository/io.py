@@ -7,7 +7,7 @@ from .base import Repository
 from ..config import BASE_DIR
 
 IO_DIR_NAME = os.getenv(
-    "GITHUB_WORKSPACE", os.getenv("PRICE_SCRAPER_IO_OUTPUT", BASE_DIR.parent)
+    "PRICE_SCRAPER_IO_OUTPUT", os.getenv("GITHUB_WORKSPACE", BASE_DIR.parent)
 )
 IO_DIR = Path(IO_DIR_NAME) / "data"
 
