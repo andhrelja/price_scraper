@@ -24,8 +24,6 @@ jobs:
         run: pip install .
           
       - name: Run price_scraper # run main.py
-        env:
-          PRICE_SCRAPER_IO_OUTPUT: '/Users/andhrelja/Local/Private/price_scraper/data'
         run: |
           python -m price_scraper --all
           python reports/make.py
