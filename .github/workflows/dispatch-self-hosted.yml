@@ -1,4 +1,4 @@
-name: Run Scraper
+name: Dispatch Scraper (self-hosted)
 
 on:
   workflow_dispatch:

@@ -1,4 +1,4 @@
-name: Run Scraper
+name: Scheduled Scraper (ubuntu-latest)
 
 on:
   workflow_dispatch:
