@@ -13,9 +13,10 @@ from price_scraper.utils.io import read_json
 # from price_scraper import services
 # services are dynamically imported by importlib.import_module
 
+LOG_LEVEL = os.getenv("LOG_LEVEL", "DEBUG")
 
 logger = logging.getLogger(__package__)
-logger.setLevel(logging.INFO)
+logger.setLevel(LOG_LEVEL)
 
 PR_NAME = "price_scraper"
 PR_DESC = "Scrape pre-configured websites for product prices"
@@ -27,16 +28,25 @@ CL_ARGS = (
             help="Scrape all products",
         ),
     ),
+    (
+        ("-t", "--limit"),
+        dict(help="Amount of requests to make", default=None),
+    ),
 )
 
 
-def scrape_all_products(configs):
-    for product_cfg in configs["products"]:
-        jobs = map(lambda job: config.Job(**job), product_cfg["jobs"])
+def scrape_all_products(configs, all=True, limit=None):
+    limit = int(limit) if limit else None
+    total_records = len(Repository.list())
+    for product_cfg in configs["products"][:limit]:
+        jobs = map(
+            lambda job: config.Job(**job),
+            filter(lambda x: x["is_active"] is True, product_cfg["jobs"]),
+        )
         cfg = config.Config(
             product_name=product_cfg["name"],
             product_short_name=product_cfg["short_name"],
-            jobs=list(jobs),
+            jobs=list(jobs)[:limit],
         )
 
         for job in cfg.jobs:
@@ -64,10 +74,11 @@ def scrape_all_products(configs):
             )
             Repository.add(product.asdict())
 
-    logger.info("Updated records: %s", len(Repository.list()))
+    updated_records = len(Repository.list()) - total_records
+    logger.info("Updated records: %s", updated_records)
 
 
-CL_MAPS = {"all": scrape_all_products}
+CL_MAPS = {"all": scrape_all_products, "limit": scrape_all_products}
 
 
 if __name__ == "__main__":
@@ -76,13 +87,14 @@ if __name__ == "__main__":
     configs = read_json(config.BASE_DIR / "config.json")
     parser = argparse.ArgumentParser(prog=PR_NAME, description=PR_DESC)
     for args, kwargs in CL_ARGS:
-        logger.debug(args, kwargs)
+        # logger.debug(args, kwargs)
         parser.add_argument(*args, **kwargs)
     args = parser.parse_args()
+    # args = parser.parse_known_args()[0]
     kwargs = vars(args)
     logger.debug("Parsed args: %s", args)
 
     for fn in CL_MAPS:
         if getattr(args, fn):
             exec = CL_MAPS[fn]
-            exec(configs)
+            exec(configs, **kwargs)

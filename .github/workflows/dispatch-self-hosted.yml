@@ -24,6 +24,7 @@ jobs:
       - name: Run price_scraper # run main.py
         env:
           PRICE_SCRAPER_IO_OUTPUT: '/Users/andhrelja/Local/Private/price_scraper'
+          LOG_LEVEL: 'INFO'
         run: |
           python -m price_scraper --all
           python reports/make.py
