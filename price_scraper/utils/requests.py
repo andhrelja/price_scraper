@@ -10,6 +10,7 @@ def get(url, *args, **kwargs):
     response = requests.get(url, *args, **kwargs)
     logger.debug("args: %s", json.dumps(args, indent=2))
     logger.debug("kwargs: %s", json.dumps(kwargs, indent=2))
+    logger.debug("response: %s", json.dumps(response, default=str, indent=2))
     if response.status_code != 404:
         response.raise_for_status()
     return response
