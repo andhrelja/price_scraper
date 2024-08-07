@@ -25,7 +25,7 @@ jobs:
           
       - name: Run price_scraper # run main.py
         env:
-          LOG_LEVEL: 'DEBUG'
+          LOG_LEVEL: 'INFO'
         run: |
           python -m price_scraper --all
           python reports/make.py
