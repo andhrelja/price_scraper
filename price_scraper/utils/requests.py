@@ -17,4 +17,7 @@ def get(url, *args, **kwargs):
     logger.debug("response: %s", json.dumps(response, default=str, indent=2))
     if response.status_code != 404:
         response.raise_for_status()
+    if response.status_code == 404:
+        logger.warning("Page not found: %s", url)
+        return
     return response
