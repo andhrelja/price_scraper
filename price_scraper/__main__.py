@@ -54,10 +54,9 @@ def scrape_all_products(configs, all=True, limit=None):
                 continue
             url = "{protocol}{host}{port}/{prefix}".format(**job.asdict())
             response = requests.get(url, headers=job.headers)
-            logger.info("GET %s - %s", response.status_code, url)
-            if response.status_code == 404:
-                logger.warning("Page not found: %s", url)
+            if response is None:
                 continue
+            logger.info("GET %s - %s", response.status_code, url)
 
             try:
                 module_name = "price_scraper.services." + job.service
