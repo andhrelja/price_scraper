@@ -20,39 +20,33 @@ logger.setLevel(LOG_LEVEL)
 
 PR_NAME = "price_scraper"
 PR_DESC = "Scrape pre-configured websites for product prices"
-CL_ARGS = (
+CL_ARGS = (  # https://docs.python.org/3/library/argparse.html
     (
-        ("-l", "--all"),
-        dict(
-            action="store_true",
-            help="Scrape all products",
-        ),
-    ),
-    (
-        ("-t", "--limit"),
-        dict(help="Amount of requests to make", default=None),
+        ("-i", "--input-config"),
+        dict(help="Products configuration input JSON file path", default=None),
     ),
 )
 
 
-def scrape_all_products(configs, all=True, limit=None):
-    limit = int(limit) if limit else None
-    total_records = len(Repository.list())
-    for product_cfg in configs["products"][:limit]:
-        jobs = map(
-            lambda job: config.Job(**job),
-            filter(lambda x: x["is_active"] is True, product_cfg["jobs"]),
-        )
-        cfg = config.Config(
-            product_name=product_cfg["name"],
-            product_short_name=product_cfg["short_name"],
-            jobs=list(jobs)[:limit],
-        )
+def run_config(cfg):
+    cfg = config.Config(
+        product_name=cfg["name"],
+        product_short_name=cfg["short_name"],
+        jobs=list(
+            map(
+                lambda job: config.Job(**job),
+                filter(lambda x: x["is_active"] is True, cfg["jobs"]),
+            )
+        ),
+    )
 
-        for job in cfg.jobs:
-            if not job.is_active:
-                continue
-            url = "{protocol}{host}{port}/{prefix}".format(**job.asdict())
+    for job in cfg.jobs:
+        if not job.is_active:
+            continue
+        url = "{protocol}{host}{port}/{prefix}".format(**job.asdict())
+        html_text = None
+
+        if job.protocol == "https":
             response = requests.get(url, headers=job.headers)
             if response is None:
                 continue
@@ -60,40 +54,36 @@ def scrape_all_products(configs, all=True, limit=None):
 
             try:
                 module_name = "price_scraper.services." + job.service
-                service = importlib.import_module(module_name)
+                SERVICE = importlib.import_module(module_name)
             except ImportError:
                 logger.error("Module '%s' not found. Was it created?", module_name)
                 raise
 
-            product = service.apply(
-                response.text,
-                name=cfg.product_name,
-                short_name=cfg.product_short_name,
-                source=job.host,
-            )
-            Repository.add(product.asdict())
+            html_text = response.text
 
-    updated_records = len(Repository.list()) - total_records
-    logger.info("Updated records: %s", updated_records)
-
-
-CL_MAPS = {"all": scrape_all_products, "limit": scrape_all_products}
+        product = SERVICE.apply(
+            html_text,
+            name=cfg.product_name,
+            short_name=cfg.product_short_name,
+            source=job.host,
+        )
+        Repository.add(product.asdict())
 
 
 if __name__ == "__main__":
     logger.debug(json.dumps(dict(os.environ), indent=2))
 
-    configs = read_json(config.BASE_DIR / "config.json")
     parser = argparse.ArgumentParser(prog=PR_NAME, description=PR_DESC)
     for args, kwargs in CL_ARGS:
-        # logger.debug(args, kwargs)
         parser.add_argument(*args, **kwargs)
-    args = parser.parse_args()
-    # args = parser.parse_known_args()[0]
-    kwargs = vars(args)
-    logger.debug("Parsed args: %s", args)
 
-    for fn in CL_MAPS:
-        if getattr(args, fn):
-            exec = CL_MAPS[fn]
-            exec(configs, **kwargs)
+    args = parser.parse_args()
+    kwargs = vars(args)
+    logger.debug("Parsed args, kwargs: %s, %s", args, json.dumps(kwargs, indent=2))
+
+    cfg = read_json(args.input_config)
+    total_records = len(Repository.list())
+    for cfg in cfg["products"]:
+        run_config(cfg)
+        updated_records = len(Repository.list()) - total_records
+        logger.info("Updated records: %s", updated_records)

@@ -14,21 +14,28 @@ Perform the following commands to install the package:
 
 ## Usage
 
-    usage: price_scraper [-h] [-l] [-t LIMIT]
+    usage: price_scraper [-h] [-i INPUT_CONFIG]
 
     Scrape pre-configured websites for product prices
 
     options:
     -h, --help            show this help message and exit
-    -l, --all             Scrape all products
-    -t LIMIT, --limit LIMIT
-                            Amount of requests to make
+    -i INPUT_CONFIG, --input-config INPUT_CONFIG
+                            Products configuration input JSON file path
 
-After data has been scraped, it can be plotted into an SVG graph by executing the following:
 
-    python reports/make.py
+## Configuration 
 
-## Configuration
+> [!IMPORTANT]  
+> Supported websites are listed as module names in `price_scraper/services/`:
+> - instar
+> - links
+> - mediaworld
+> - mikronis
+> - mobileshop
+> - nabava
+> - unieuro
+<!-- https://github.com/orgs/community/discussions/16925 -->
 
 Price Scraper is configured using Environment Variables:
 
@@ -66,7 +73,5 @@ Websites and products to scrape can be configured via `price_scraper/config.json
     ]
 }
 ```
-
-Supported websites are listed as module names in `price_scraper/services/`.
 
 ![products-report](reports/index.svg)
