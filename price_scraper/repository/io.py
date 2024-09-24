@@ -6,10 +6,7 @@ import csv
 from .base import Repository
 from ..config import BASE_DIR
 
-IO_DIR_NAME = os.getenv(
-    "PRICE_SCRAPER_IO_OUTPUT", os.getenv("GITHUB_WORKSPACE", BASE_DIR.parent)
-)
-IO_DIR = Path(IO_DIR_NAME) / "data"
+DATA_DIR = Path(os.getenv("DATA_DIR", BASE_DIR.parent / "data"))
 
 
 class IORepository(Repository):
@@ -18,7 +15,7 @@ class IORepository(Repository):
     file_ext: str = ".csv"
 
     def __init__(self, table_name: str, **kwargs) -> None:
-        self.file_path = IO_DIR / (table_name + self.file_ext)
+        self.file_path = DATA_DIR / (table_name + self.file_ext)
         self.header = kwargs.get("header", [])
         self.delimiter = kwargs.get("delimiter", ",")
         self.newline = kwargs.get("newline", "\n")

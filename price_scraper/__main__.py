@@ -22,7 +22,7 @@ PR_NAME = "price_scraper"
 PR_DESC = "Scrape pre-configured websites for product prices"
 CL_ARGS = (  # https://docs.python.org/3/library/argparse.html
     (
-        ("-i", "--input-config"),
+        ("-i", "--input-config-path"),
         dict(help="Products configuration input JSON file path", default=None),
     ),
 )
@@ -43,10 +43,12 @@ def run_config(cfg):
     for job in cfg.jobs:
         if not job.is_active:
             continue
-        url = "{protocol}{host}{port}/{prefix}".format(**job.asdict())
-        html_text = None
 
-        if job.protocol == "https":
+        SERVICE = None
+        html_text = None
+        url = "{protocol}{host}{port}/{prefix}".format(**job.asdict())
+
+        if job.protocol == "https://":
             response = requests.get(url, headers=job.headers)
             if response is None:
                 continue
@@ -67,6 +69,9 @@ def run_config(cfg):
             short_name=cfg.product_short_name,
             source=job.host,
         )
+        if not product:
+            logger.error("No product found in response")
+            continue
         Repository.add(product.asdict())
 
 
@@ -81,7 +86,7 @@ if __name__ == "__main__":
     kwargs = vars(args)
     logger.debug("Parsed args, kwargs: %s, %s", args, json.dumps(kwargs, indent=2))
 
-    cfg = read_json(args.input_config)
+    cfg = read_json(args.input_config_path)
     total_records = len(Repository.list())
     for cfg in cfg["products"]:
         run_config(cfg)

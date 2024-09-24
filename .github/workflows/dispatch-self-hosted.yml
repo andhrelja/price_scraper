@@ -17,14 +17,15 @@ jobs:
       #   with:
       #     python-version-file: 'pyproject.toml'
       #     cache: 'pip'
-          
+
       - name: Install price_scraper
         run: pip install .
           
       - name: Run price_scraper # run main.py
         env:
-          PRICE_SCRAPER_IO_OUTPUT: '/Users/andhrelja/Local/Private/price_scraper'
           LOG_LEVEL: 'INFO'
+          INPUT_CONFIG_PATH: '/Users/andhrelja/Local/Private/price_scraper/config.json'
+          DATA_DIR: '/Users/andhrelja/Local/Private/price_scraper/data'
         run: |
-          python -m price_scraper --all
+          python -m price_scraper --input-config-path ${INPUT_CONFIG_PATH}
           python reports/make.py

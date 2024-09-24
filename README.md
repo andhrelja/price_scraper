@@ -41,9 +41,9 @@ Price Scraper is configured using Environment Variables:
 
 - `LOG_LEVEL`
     - configures logging level, defaults to "DEBUG"
-- `PRICE_SCRAPER_IO_OUTPUT`
+- `DATA_DIR`
     - configures the data output path for IO outputs
-    - **Note**: type of output is configured by a variable named `Repository` in `price_scraper/__init__.py`
+    - **Note**: output type is configured by a variable named `Repository` in `price_scraper/__init__.py`
 
 Websites and products to scrape can be configured via `price_scraper/config.json`. Example configuration entry:
 

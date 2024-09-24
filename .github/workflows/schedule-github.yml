@@ -26,8 +26,9 @@ jobs:
       - name: Run price_scraper # run main.py
         env:
           LOG_LEVEL: 'INFO'
+          DATA_DIR: ${{ github.workspace }}/data
         run: |
-          python -m price_scraper --all
+          python -m price_scraper --input-config-path ${{ github.workspace }}/config.json
           python reports/make.py
           
       - name: Commit data
