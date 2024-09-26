@@ -6,7 +6,7 @@ import csv
 from .base import Repository
 from ..config import BASE_DIR
 
-DATA_DIR = Path(os.getenv("DATA_DIR", BASE_DIR.parent / "data"))
+REPOSITORY_IO_PATH = Path(os.getenv("REPOSITORY_IO_PATH", BASE_DIR.parent / "data"))
 
 
 class IORepository(Repository):
@@ -15,7 +15,7 @@ class IORepository(Repository):
     file_ext: str = ".csv"
 
     def __init__(self, table_name: str, **kwargs) -> None:
-        self.file_path = DATA_DIR / (table_name + self.file_ext)
+        self.file_path = REPOSITORY_IO_PATH / (table_name + self.file_ext)
         self.header = kwargs.get("header", [])
         self.delimiter = kwargs.get("delimiter", ",")
         self.newline = kwargs.get("newline", "\n")

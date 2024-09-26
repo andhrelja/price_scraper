@@ -14,14 +14,14 @@ Perform the following commands to install the package:
 
 ## Usage
 
-    usage: price_scraper [-h] [-i INPUT_CONFIG]
+    usage: price_scraper [-h] [-i CONFIG_JSON_PATH]
 
     Scrape pre-configured websites for product prices
 
     options:
     -h, --help            show this help message and exit
-    -i INPUT_CONFIG, --input-config INPUT_CONFIG
-                            Products configuration input JSON file path
+    -i CONFIG_JSON_PATH, --config-json-path CONFIG_JSON_PATH
+                            Products configuration input JSON absolute file path
 
 
 ## Configuration 
@@ -41,7 +41,7 @@ Price Scraper is configured using Environment Variables:
 
 - `LOG_LEVEL`
     - configures logging level, defaults to "DEBUG"
-- `DATA_DIR`
+- `REPOSITORY_IO_PATH`
     - configures the data output path for IO outputs
     - **Note**: output type is configured by a variable named `Repository` in `price_scraper/__init__.py`
 

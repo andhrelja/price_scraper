@@ -22,8 +22,8 @@ PR_NAME = "price_scraper"
 PR_DESC = "Scrape pre-configured websites for product prices"
 CL_ARGS = (  # https://docs.python.org/3/library/argparse.html
     (
-        ("-i", "--input-config-path"),
-        dict(help="Products configuration input JSON file path", default=None),
+        ("-i", "--config-json-path"),
+        dict(help="Products configuration input JSON absolute file path", default=None),
     ),
 )
 
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     kwargs = vars(args)
     logger.debug("Parsed args, kwargs: %s, %s", args, json.dumps(kwargs, indent=2))
 
-    cfg = read_json(args.input_config_path)
+    cfg = read_json(args.config_json_path)
     total_records = len(Repository.list())
     for cfg in cfg["products"]:
         run_config(cfg)

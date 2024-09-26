@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import logging
 
 from price_scraper import Repository
-from price_scraper.repository.io import IO_DIR
+from price_scraper.repository.io import REPOSITORY_IO
 
-IO_DIR = IO_DIR.parent / "reports"
+IO_DIR = REPOSITORY_IO.parent / "reports"
 logger = logging.getLogger("reports.make")
 
 dtypes = dict(

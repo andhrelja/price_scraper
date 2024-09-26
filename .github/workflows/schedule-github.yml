@@ -26,18 +26,17 @@ jobs:
       - name: Run price_scraper # run main.py
         env:
           LOG_LEVEL: 'INFO'
-          DATA_DIR: ${{ github.workspace }}/data
+          CONFIG_JSON_PATH: ${{ github.workspace }}/config.json
+          REPOSITORY_IO_PATH: ${{ github.workspace }}/data
         run: |
-          python -m price_scraper --input-config-path ${{ github.workspace }}/config.json
+          python -m price_scraper --config-json-path $CONFIG_JSON_PATH
           python reports/make.py
           
       - name: Commit data
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git status
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "chore(auto): update report" --allow-empty)
+          git commit -a -m "chore(auto): update report" --allow-empty
           
       - name: Push changes
         uses: ad-m/github-push-action@v0.8.0

@@ -24,8 +24,8 @@ jobs:
       - name: Run price_scraper # run main.py
         env:
           LOG_LEVEL: 'INFO'
-          INPUT_CONFIG_PATH: '/Users/andhrelja/Local/Private/price_scraper/config.json'
-          DATA_DIR: '/Users/andhrelja/Local/Private/price_scraper/data'
+          CONFIG_JSON_PATH: '/Users/andhrelja/Local/Private/price_scraper/config.json'
+          REPOSITORY_IO_PATH: '/Users/andhrelja/Local/Private/price_scraper/data'
         run: |
-          python -m price_scraper --input-config-path ${INPUT_CONFIG_PATH}
+          python -m price_scraper --config-json-path ${CONFIG_JSON_PATH}
           python reports/make.py
