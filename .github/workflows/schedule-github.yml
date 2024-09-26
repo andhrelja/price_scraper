@@ -28,9 +28,12 @@ jobs:
           LOG_LEVEL: 'INFO'
           CONFIG_JSON_PATH: ${{ github.workspace }}/config.json
           REPOSITORY_IO_PATH: ${{ github.workspace }}/data
-        run: |
-          python -m price_scraper --config-json-path $CONFIG_JSON_PATH
-          python reports/make.py
+        run: python -m price_scraper --config-json-path $CONFIG_JSON_PATH
+      
+      - name: Generate report
+        env:
+          REPOSITORY_IO_PATH: ${{ github.workspace }}/data
+        run: python reports/make.py
           
       - name: Commit data
         run: |
