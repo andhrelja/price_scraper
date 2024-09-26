@@ -1,6 +1,14 @@
 # Price Scraper
 
-Scrapes prices for configured products.
+Scrapes prices for configured products. 
+
+Inputs:
+
+- path to `config.json` as a program parameter (`--config-json-path`)
+
+Outputs:
+
+- CSV output to a directory configured as an environment variable (`REPOSITORY_IO_PATH`)
 
 ## Installation
 
