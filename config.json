@@ -11,6 +11,14 @@
                     "host": "nabava.net",
                     "port": "",
                     "prefix": "mobiteli/apple-iphone-16-cijena-256gb-61-616701131"
+                },
+                {
+                    "is_active": true,
+                    "service": "links",
+                    "protocol": "https://",
+                    "host": "links.hr",
+                    "port": "",
+                    "prefix": "hr/smartphone-apple-iphone-16-61-8gb-256gb-ios-plavi-0103011130"
                 }
             ]
         },
@@ -71,7 +79,7 @@
                     "prefix": "hr/apple/mobiteli/iphone-16-pro-5g-dual-sim-256gb-8gb-ram-titanium/"
                 },
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "links",
                     "protocol": "https://",
                     "host": "links.hr",
