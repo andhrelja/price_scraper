@@ -19,17 +19,43 @@ class IORepository(Repository):
         self.header = kwargs.get("header", [])
         self.delimiter = kwargs.get("delimiter", ",")
         self.newline = kwargs.get("newline", "\n")
+        self.quoting = kwargs.get("quoting", csv.QUOTE_MINIMAL)
 
-    def add(self, row: str) -> None:
+    def add(self, row: dict) -> None:
         with open(
             self.file_path, mode=self.mode, encoding=self.encoding, newline=self.newline
         ) as fp:
-            dw = csv.DictWriter(f=fp, fieldnames=self.header, delimiter=self.delimiter)
+            dw = csv.DictWriter(
+                f=fp,
+                fieldnames=self.header,
+                delimiter=self.delimiter,
+                quoting=self.quoting,
+            )
             dw.writerow(row)
+
+    def add_all(self, rows: Iterable) -> None:
+        with open(
+            self.file_path, mode=self.mode, encoding=self.encoding, newline=self.newline
+        ) as fp:
+            dw = csv.DictWriter(
+                f=fp,
+                fieldnames=self.header,
+                delimiter=self.delimiter,
+                quoting=self.quoting,
+            )
+            dw.writerows(rows)
 
     def list(self) -> Iterable:
         with open(
             self.file_path, mode="r", encoding=self.encoding, newline=self.newline
         ) as fp:
-            dr = csv.DictReader(f=fp, fieldnames=self.header, delimiter=self.delimiter)
+            dr = csv.DictReader(
+                f=fp,
+                fieldnames=self.header,
+                delimiter=self.delimiter,
+                quoting=self.quoting,
+            )
             return list(dr)
+
+    def delete_all(self) -> None:
+        os.remove(self.file_path)

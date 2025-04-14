@@ -6,22 +6,25 @@ from typing import Iterable
 from bs4 import BeautifulSoup
 import json
 
-from .. import models
+from price_scraper import models
+from price_scraper import repository
 
 SCRIPT_INDEX = 1
 
 
 def html_parser(html_text: str, features="html.parser") -> Iterable:
     soup = BeautifulSoup(html_text, features)
-    scripts = soup.findAll("script", type="application/ld+json")
+    scripts = soup.find_all("script", type="application/ld+json")
     try:
         return json.loads(scripts[SCRIPT_INDEX].string)
     except IndexError:
         return {}
 
 
-def apply(html_text: str, **kwargs) -> None:
+def apply(html_text: str, **kwargs) -> models.Product:
     parsed = html_parser(html_text)
     if not parsed:
         return parsed
-    return models.Product(price=parsed["offers"]["price"], **kwargs)
+    product = models.Product(price=parsed["offers"]["price"], **kwargs)
+    repository.Product.add(product.asdict())
+    return product

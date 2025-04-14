@@ -18,3 +18,6 @@ class InMemoryRepository(Repository):
 
     def list(self) -> Iterable:
         return self.objects
+
+    def delete_all(self) -> None:
+        self.objects = []

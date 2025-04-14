@@ -1,15 +1,7 @@
-from dataclasses import dataclass, asdict, field
+from dataclasses import dataclass, field
 from datetime import datetime
 
-import json
-
-
-class JSONMeta:
-    def asdict(self):
-        return asdict(self)
-
-    def __repr__(self) -> str:
-        return json.dumps(self.asdict(), indent=2)
+from price_scraper.models.base import JSONMeta
 
 
 @dataclass
@@ -19,8 +11,4 @@ class Product(JSONMeta):
     source: str
     price: float
     created_at: datetime = field(default_factory=datetime.now)
-
-    @property
-    def header(self):
-        keys = self.asdict().keys()
-        return list(keys)
+    product_type: str = None

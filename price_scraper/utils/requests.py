@@ -18,13 +18,13 @@ def get(url, *args, **kwargs):
 
     if response.status_code == 404:
         logger.warning("Page not found: %s", url)
-        return
+        return response
     elif response.status_code == 403:
         logger.warning("Forbidden for URL: %s", url)
-        return
+        return response
     elif response.status_code >= 500:
         logger.warning("Server error for URL: %s", url)
-        return
+        return response
     else:
         response.raise_for_status()
     return response

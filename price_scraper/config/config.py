@@ -20,6 +20,7 @@ class Meta:
 class Config(Meta):
     product_name: str
     product_short_name: str
+    product_type: str
     jobs: list
 
 

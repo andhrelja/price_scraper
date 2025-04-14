@@ -5,10 +5,10 @@ Scrapes prices for configured products.
 Inputs:
 
 - path to `config.json` as a program parameter (`--config-json-path`)
+- CSV output to a directory configured as an **environment variable** (`REPOSITORY_IO_PATH`)
 
 Outputs:
-
-- CSV output to a directory configured as an environment variable (`REPOSITORY_IO_PATH`)
+- `${REPOSITORY_IO_PATH}`*/products.csv*
 
 ## Installation
 
@@ -30,12 +30,17 @@ Perform the following commands to install the package:
     -h, --help            show this help message and exit
     -i CONFIG_JSON_PATH, --config-json-path CONFIG_JSON_PATH
                             Products configuration input JSON absolute file path
+    
+    examples:
+        python -m price_scraper -i /<absolute-path>/config.json
+
+        python -m price_scraper --config-json-path /<absolute-path>/config.json
 
 
 ## Configuration 
 
 > [!IMPORTANT]  
-> Supported websites are listed as module names in `price_scraper/services/`:
+> Supported websites are listed as module names in `price_scraper/services/<type>/`:
 > - instar
 > - links
 > - mediaworld
@@ -61,6 +66,7 @@ Websites and products to scrape can be configured via `price_scraper/config.json
         {
             "name": "Apple iPhone 15 Pro, 256GB, 6,1\"",
             "short_name": "Apple iPhone 15 Pro",
+            "type": "tech",
             "jobs": [
                 {
                     "is_active": false,
@@ -68,13 +74,7 @@ Websites and products to scrape can be configured via `price_scraper/config.json
                     "protocol": "https://",
                     "host": "mediaworld.it",
                     "port": "",
-                    "prefix": "it/product/_apple-iphone-15-pro-256gb-titanio-nero-188294.html",
-                    "headers": {
-                        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-                        "Accept-Encoding": "gzip, deflate, br",
-                        "Accept-Language": "en-US,en;q=0.9",
-                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.46"
-                    }
+                    "prefix": "it/product/_apple-iphone-15-pro-256gb-titanio-nero-188294.html"
                 }
             ]
         }
@@ -82,4 +82,8 @@ Websites and products to scrape can be configured via `price_scraper/config.json
 }
 ```
 
-![products-report](reports/index.svg)
+## Tech Report
+![tech-report](reports/tech.svg)
+
+## Estate Report
+![estate-report](reports/estate.svg)

@@ -4,8 +4,10 @@ import json
 import logging
 import os
 
+# from types import ModuleType
+
 from price_scraper import config
-from price_scraper import Repository
+from price_scraper import repository
 
 from price_scraper.utils import requests
 from price_scraper.utils.io import read_json
@@ -32,6 +34,7 @@ def run_config(cfg):
     cfg = config.Config(
         product_name=cfg["name"],
         product_short_name=cfg["short_name"],
+        product_type=cfg["product_type"],
         jobs=list(
             map(
                 lambda job: config.Job(**job),
@@ -50,7 +53,7 @@ def run_config(cfg):
 
         if job.protocol == "https://":
             response = requests.get(url, headers=job.headers)
-            if response is None:
+            if not response.ok:
                 continue
             logger.info("GET %s - %s", response.status_code, url)
 
@@ -68,11 +71,11 @@ def run_config(cfg):
             name=cfg.product_name,
             short_name=cfg.product_short_name,
             source=job.host,
+            product_type=cfg.product_type,
         )
         if not product:
             logger.error("No product found in response")
             continue
-        Repository.add(product.asdict())
 
 
 if __name__ == "__main__":
@@ -87,8 +90,8 @@ if __name__ == "__main__":
     logger.debug("Parsed args, kwargs: %s, %s", args, json.dumps(kwargs, indent=2))
 
     cfg = read_json(args.config_json_path)
-    total_records = len(Repository.list())
+    total_records = len(repository.Product.list())
     for cfg in cfg["products"]:
         run_config(cfg)
-        updated_records = len(Repository.list()) - total_records
+        updated_records = len(repository.Product.list()) - total_records
         logger.info("Updated records: %s", updated_records)

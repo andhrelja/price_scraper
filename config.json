@@ -3,14 +3,19 @@
         {
             "name": "Apple iPhone 16, 256GB, 6,1\"",
             "short_name": "Apple iPhone 16",
+            "product_type": "tech",
             "jobs": [
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "nabava",
                     "protocol": "https://",
                     "host": "nabava.net",
                     "port": "",
-                    "prefix": "mobiteli/apple-iphone-16-cijena-256gb-61-616701131"
+                    "prefix": "mobiteli/apple-iphone-16-cijena-256gb-61-616701131",
+                    "headers": {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+                        "Accept": "application/json, text/javascript, */*; q=0.01"
+                    }
                 },
                 {
                     "is_active": true,
@@ -25,6 +30,7 @@
         {
             "name": "Apple iPhone 16 Pro, 256GB, 6,3\"",
             "short_name": "Apple iPhone 16 Pro",
+            "product_type": "tech",
             "jobs": [
                 {
                     "is_active": true,
@@ -35,18 +41,35 @@
                     "prefix": "hr/apple/mobiteli/iphone-16-pro-5g-dual-sim-256gb-8gb-ram-titanium/"
                 },
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "nabava",
                     "protocol": "https://",
                     "host": "nabava.net",
                     "port": "",
                     "prefix": "mobiteli/apple-iphone-16-pro-cijena-256gb-63-616701071"
+                },
+                {
+                    "is_active": false,
+                    "service": "instar",
+                    "protocol": "https://",
+                    "host": "instar-informatika.hr",
+                    "port": "",
+                    "prefix": "mobitel-apple-iphone-16-pro-256gb-black-titanium/262201/product/"
+                },
+                {
+                    "is_active": false,
+                    "service": "links",
+                    "protocol": "https://",
+                    "host": "links.hr",
+                    "port": "",
+                    "prefix": "hr/smartphone-apple-iphone-16-pro-63-8gb-256gb-ios-crni-0103011044"
                 }
             ]
         },
         {
             "name": "Apple iPhone 15 Pro, 256GB, 6,1\"",
             "short_name": "Apple iPhone 15 Pro",
+            "product_type": "tech",
             "jobs": [
                 {
                     "is_active": false,
@@ -87,7 +110,7 @@
                     "prefix": "hr/smartphone-apple-iphone-15-pro-6-1-8gb-256gb-ios-crni-010301641"
                 },
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "instar",
                     "protocol": "https://",
                     "host": "instar-informatika.hr",
@@ -95,7 +118,7 @@
                     "prefix": "mobitel-apple-iphone-15-pro-256gb-blue-titanium/213167/product/"
                 },
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "nabava",
                     "protocol": "https://",
                     "host": "nabava.net",
@@ -107,6 +130,7 @@
         {
             "name": "Samsung Galaxy S24, 256GB, 6.2",
             "short_name": "Samsung Galaxy S24",
+            "product_type": "tech",
             "jobs": [
                 {
                     "is_active": false,
@@ -128,10 +152,10 @@
                     "protocol": "https://",
                     "host": "links.hr",
                     "port": "",
-                    "prefix": "hr/smartphone-samsung-galaxy-s24-6-2-8gb-256gb-android-14-sivi-010301814"
+                    "prefix": "hr/smartphone-samsung-galaxy-s24-62-8gb-128gb-android-14-sivi-010301810"
                 },
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "instar",
                     "protocol": "https://",
                     "host": "instar-informatika.hr",
@@ -139,7 +163,7 @@
                     "prefix": "mobitel-samsung-galaxy-s24-62-120hz-8gb-ram-256gb-memorija-5g-o/226177/product/"
                 },
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "mikronis",
                     "protocol": "https://",
                     "host": "mikronis.hr",
@@ -147,12 +171,50 @@
                     "prefix": "Proizvod/samsung-galaxy-s24-6-2-8-256gb-amber-yellow-sm-s921bzygeue/41961"
                 },
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "nabava",
                     "protocol": "https://",
                     "host": "nabava.net",
                     "port": "",
                     "prefix": "mobiteli/samsung-galaxy-s24-cijena-256gb-62-517038971"
+                }
+            ]
+        },
+        {
+            "name": "Stan 51m², Belveder",
+            "short_name": "Belveder, Rijeka",
+            "product_type": "estate",
+            "jobs": [
+                {
+                    "is_active": true,
+                    "service": "dux",
+                    "protocol": "https://",
+                    "host": "dux-nekretnine.hr",
+                    "port": "",
+                    "prefix": "stan/rijeka-belveder-stan-od-51m2-na-odlicnoj-lokaciji",
+                    "headers": {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+                        "Accept": "application/json, text/javascript, */*; q=0.01"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Dva stana 60m², Bulevard",
+            "short_name": "Bulevard, Rijeka",
+            "product_type": "estate",
+            "jobs": [
+                {
+                    "is_active": true,
+                    "service": "remax",
+                    "protocol": "https://",
+                    "host": "remax-centarnekretnina.com",
+                    "port": "",
+                    "prefix": "stan/rijeka-bulevard-dva-jednosobna-adaptirana-stana",
+                    "headers": {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+                        "Accept": "application/json, text/javascript, */*; q=0.01"
+                    }
                 }
             ]
         }
