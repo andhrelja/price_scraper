@@ -182,7 +182,7 @@
         },
         {
             "name": "Stan 51m², Belveder",
-            "short_name": "Belveder, Rijeka",
+            "short_name": "Belveder 51m², Rijeka",
             "product_type": "estate",
             "jobs": [
                 {
@@ -195,11 +195,30 @@
                     "headers": {
                         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
                         "Accept": "application/json, text/javascript, */*; q=0.01"
-                    },
-                    "extra": {
-                        "alternate_listings": [
-                            "https://mololongorealestate.com/stan-apartman/belveder-stan-51m2-4-kat-jug-balkon"
-                        ]
+                    }
+                },
+                {
+                    "is_active": true,
+                    "service": "mololongo",
+                    "protocol": "https://",
+                    "host": "mololongorealestate.com",
+                    "port": "",
+                    "prefix": "stan-apartman/belveder-stan-51m2-4-kat-jug-balkon",
+                    "headers": {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+                        "Accept": "application/json, text/javascript, */*; q=0.01"
+                    }
+                },
+                {
+                    "is_active": true,
+                    "service": "real",
+                    "protocol": "https://",
+                    "host": "real-nekretnine.com",
+                    "port": "",
+                    "prefix": "stan/belveder1739790807",
+                    "headers": {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+                        "Accept": "application/json, text/javascript, */*; q=0.01"
                     }
                 }
             ]
@@ -241,6 +260,26 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "Stan 56m², Belveder",
+            "short_name": "Belveder 56m², Rijeka",
+            "product_type": "estate",
+            "jobs": [
+                {
+                    "is_active": true,
+                    "service": "four",
+                    "protocol": "https://",
+                    "host": "four-nekretnine.hr",
+                    "port": "",
+                    "prefix": "stan/rijeka-belveder-2skl-5699m2-balkon",
+                    "headers": {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+                        "Accept": "application/json, text/javascript, */*; q=0.01"
+                    }
+                }
+            ]
         }
+
     ]
 }

@@ -4,8 +4,6 @@ import json
 import logging
 import os
 
-# from types import ModuleType
-
 from price_scraper import config
 from price_scraper import repository
 
