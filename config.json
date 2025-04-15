@@ -195,6 +195,11 @@
                     "headers": {
                         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
                         "Accept": "application/json, text/javascript, */*; q=0.01"
+                    },
+                    "extra": {
+                        "alternate_listings": [
+                            "https://mololongorealestate.com/stan-apartman/belveder-stan-51m2-4-kat-jug-balkon"
+                        ]
                     }
                 }
             ]
@@ -211,6 +216,25 @@
                     "host": "remax-centarnekretnina.com",
                     "port": "",
                     "prefix": "stan/rijeka-bulevard-dva-jednosobna-adaptirana-stana",
+                    "headers": {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+                        "Accept": "application/json, text/javascript, */*; q=0.01"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Stan 45m², Donja Vežica",
+            "short_name": "Donja Vežica, Rijeka",
+            "product_type": "estate",
+            "jobs": [
+                {
+                    "is_active": true,
+                    "service": "dogma",
+                    "protocol": "https://",
+                    "host": "dogma-nekretnine.com",
+                    "port": "",
+                    "prefix": "stan/odlican-stan-na-trazenoj-lokaciji3",
                     "headers": {
                         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
                         "Accept": "application/json, text/javascript, */*; q=0.01"

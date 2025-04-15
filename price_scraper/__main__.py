@@ -12,8 +12,8 @@ from price_scraper import repository
 from price_scraper.utils import requests
 from price_scraper.utils.io import read_json
 
-# from price_scraper import services
 # services are dynamically imported by importlib.import_module
+from price_scraper import services  # noqa: F401
 
 LOG_LEVEL = os.getenv("LOG_LEVEL", "DEBUG")
 
