@@ -220,6 +220,18 @@
                         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
                         "Accept": "application/json, text/javascript, */*; q=0.01"
                     }
+                },
+                {
+                    "is_active": true,
+                    "service": "millennium",
+                    "protocol": "https://",
+                    "host": "millennium-nekretnine.hr",
+                    "port": "",
+                    "prefix": "stan/rijeka-belveder-51m2-2-sobni-stan2",
+                    "headers": {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+                        "Accept": "application/json, text/javascript, */*; q=0.01"
+                    }
                 }
             ]
         },
