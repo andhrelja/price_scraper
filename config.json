@@ -6,7 +6,7 @@
             "product_type": "tech",
             "jobs": [
                 {
-                    "is_active": false,
+                    "is_active": true,
                     "service": "nabava",
                     "protocol": "https://",
                     "host": "nabava.net",
@@ -41,7 +41,7 @@
                     "prefix": "hr/apple/mobiteli/iphone-16-pro-5g-dual-sim-256gb-8gb-ram-titanium/"
                 },
                 {
-                    "is_active": false,
+                    "is_active": true,
                     "service": "nabava",
                     "protocol": "https://",
                     "host": "nabava.net",
@@ -118,7 +118,7 @@
                     "prefix": "mobitel-apple-iphone-15-pro-256gb-blue-titanium/213167/product/"
                 },
                 {
-                    "is_active": false,
+                    "is_active": true,
                     "service": "nabava",
                     "protocol": "https://",
                     "host": "nabava.net",
@@ -171,7 +171,7 @@
                     "prefix": "Proizvod/samsung-galaxy-s24-6-2-8-256gb-amber-yellow-sm-s921bzygeue/41961"
                 },
                 {
-                    "is_active": false,
+                    "is_active": true,
                     "service": "nabava",
                     "protocol": "https://",
                     "host": "nabava.net",
