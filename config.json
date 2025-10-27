@@ -23,7 +23,7 @@
                     "protocol": "https://",
                     "host": "links.hr",
                     "port": "",
-                    "prefix": "hr/smartphone-apple-iphone-16-61-8gb-256gb-ios-plavi-0103011130"
+                    "prefix": "hr/mobitel-apple-iphone-16-61-8gb-256gb-ios-crni-0103011146"
                 }
             ]
         },
@@ -33,7 +33,7 @@
             "product_type": "tech",
             "jobs": [
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "mobileshop",
                     "protocol": "https://",
                     "host": "mobileshop.eu",
@@ -50,72 +50,26 @@
                 },
                 {
                     "is_active": false,
-                    "service": "instar",
-                    "protocol": "https://",
-                    "host": "instar-informatika.hr",
-                    "port": "",
-                    "prefix": "mobitel-apple-iphone-16-pro-256gb-black-titanium/262201/product/"
-                },
-                {
-                    "is_active": false,
                     "service": "links",
                     "protocol": "https://",
                     "host": "links.hr",
                     "port": "",
-                    "prefix": "hr/smartphone-apple-iphone-16-pro-63-8gb-256gb-ios-crni-0103011044"
+                    "prefix": "hr/mobitel-apple-iphone-16-pro-63-8gb-256gb-ios-crni-0103011044"
                 }
             ]
         },
         {
-            "name": "Apple iPhone 15 Pro, 256GB, 6,1\"",
-            "short_name": "Apple iPhone 15 Pro",
+            "name": "Apple iPhone 17, 256GB, 6,3\"",
+            "short_name": "Apple iPhone 17",
             "product_type": "tech",
             "jobs": [
                 {
                     "is_active": false,
-                    "service": "mediaworld",
-                    "protocol": "https://",
-                    "host": "mediaworld.it",
-                    "port": "",
-                    "prefix": "it/product/_apple-iphone-15-pro-256gb-titanio-nero-188294.html",
-                    "headers": {
-                        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-                        "Accept-Encoding": "gzip, deflate, br",
-                        "Accept-Language": "en-US,en;q=0.9",
-                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.46"
-                    }
-                },
-                {
-                    "is_active": false,
-                    "service": "unieuro",
-                    "protocol": "https://",
-                    "host": "unieuro.it",
-                    "port": "",
-                    "prefix": "online/iPhone/iPhone-15-Pro-256GB-Titanio-Nero-pidAPLIPHONE15PRO256"
-                },
-                {
-                    "is_active": true,
                     "service": "mobileshop",
                     "protocol": "https://",
                     "host": "mobileshop.eu",
                     "port": "",
-                    "prefix": "hr/apple/mobiteli/iphone-16-pro-5g-dual-sim-256gb-8gb-ram-titanium/"
-                },
-                {
-                    "is_active": false,
-                    "service": "links",
-                    "protocol": "https://",
-                    "host": "links.hr",
-                    "port": "",
-                    "prefix": "hr/smartphone-apple-iphone-15-pro-6-1-8gb-256gb-ios-crni-010301641"
-                },
-                {
-                    "is_active": false,
-                    "service": "instar",
-                    "protocol": "https://",
-                    "host": "instar-informatika.hr",
-                    "port": "",
-                    "prefix": "mobitel-apple-iphone-15-pro-256gb-blue-titanium/213167/product/"
+                    "prefix": "apple/mobile-phones/iphone-17-5g-dual-sim-256gb-8gb-ram-white/"
                 },
                 {
                     "is_active": true,
@@ -123,7 +77,70 @@
                     "protocol": "https://",
                     "host": "nabava.net",
                     "port": "",
-                    "prefix": "mobiteli/apple-iphone-15-pro-cijena-256gb-61-479495861"
+                    "prefix": "mobiteli/apple-iphone-17-cijena-256gb-63-792597751",
+                    "headers": {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+                        "Accept": "application/json, text/javascript, */*; q=0.01"
+                    }
+                },
+                {
+                    "is_active": false,
+                    "service": "links",
+                    "protocol": "https://",
+                    "host": "links.hr",
+                    "port": "",
+                    "prefix": "hr/mobitel-apple-iphone-16-61-8gb-256gb-ios-crni-0103011146"
+                },
+                {
+                    "is_active": true,
+                    "service": "mikronis",
+                    "protocol": "https://",
+                    "host": "mikronis.hr",
+                    "port": "",
+                    "prefix": "proizvod/apple-iphone-17-256gb-black/51317"
+                }
+            ]
+        },
+        {
+            "name": "Apple iPhone 17 Pro, 256GB, 6,3\"",
+            "short_name": "Apple iPhone 17 Pro",
+            "product_type": "tech",
+            "jobs": [
+                {
+                    "is_active": false,
+                    "service": "mobileshop",
+                    "protocol": "https://",
+                    "host": "mobileshop.eu",
+                    "port": "",
+                    "prefix": "apple/mobile-phones/iphone-17-pro-5g-dual-sim-256gb-12gb-ram-deep/"
+                },
+                {
+                    "is_active": true,
+                    "service": "nabava",
+                    "protocol": "https://",
+                    "host": "nabava.net",
+                    "port": "",
+                    "prefix": "mobiteli/mobiteli/apple-iphone-17-pro-cijena-256gb-63-792597811",
+                    "headers": {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+                        "Accept": "application/json, text/javascript, */*; q=0.01"
+                    }
+                },
+                {
+                    "is_active": true,
+                    "service": "links",
+                    "protocol": "https://",
+                    "host": "links.hr",
+                    "port": "",
+                    "prefix": "hr/mobitel-apple-iphone-17-pro-63-12gb-256gb-ios-plavi-0103011471"
+                },
+                {
+                    "is_active": true,
+                    "service": "mikronis",
+                    "protocol": "https://",
+                    "host": "mikronis.hr",
+                    "port": "",
+                    "prefix": "proizvod/apple-iphone-17-pro-256gb-deep-blue/51331"
                 }
             ]
         },
@@ -152,7 +169,7 @@
                     "protocol": "https://",
                     "host": "links.hr",
                     "port": "",
-                    "prefix": "hr/smartphone-samsung-galaxy-s24-62-8gb-128gb-android-14-sivi-010301810"
+                    "prefix": "mobitel-samsung-galaxy-s24-62-8gb-128gb-android-14-crni-010301811"
                 },
                 {
                     "is_active": false,
@@ -163,12 +180,12 @@
                     "prefix": "mobitel-samsung-galaxy-s24-62-120hz-8gb-ram-256gb-memorija-5g-o/226177/product/"
                 },
                 {
-                    "is_active": false,
+                    "is_active": true,
                     "service": "mikronis",
                     "protocol": "https://",
                     "host": "mikronis.hr",
                     "port": "",
-                    "prefix": "Proizvod/samsung-galaxy-s24-6-2-8-256gb-amber-yellow-sm-s921bzygeue/41961"
+                    "prefix": "proizvod/samsung-galaxy-s24-6-2-8gb-128gb-android-14-marble-gray-sm-s921bzadeue/41973"
                 },
                 {
                     "is_active": true,
@@ -186,7 +203,7 @@
             "product_type": "estate",
             "jobs": [
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "dux",
                     "protocol": "https://",
                     "host": "dux-nekretnine.hr",
@@ -198,7 +215,7 @@
                     }
                 },
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "mololongo",
                     "protocol": "https://",
                     "host": "mololongorealestate.com",
@@ -210,7 +227,7 @@
                     }
                 },
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "real",
                     "protocol": "https://",
                     "host": "real-nekretnine.com",
@@ -222,7 +239,7 @@
                     }
                 },
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "millennium",
                     "protocol": "https://",
                     "host": "millennium-nekretnine.hr",
@@ -241,7 +258,7 @@
             "product_type": "estate",
             "jobs": [
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "remax",
                     "protocol": "https://",
                     "host": "remax-centarnekretnina.com",
@@ -255,31 +272,12 @@
             ]
         },
         {
-            "name": "Stan 45m², Donja Vežica",
-            "short_name": "Donja Vežica, Rijeka",
-            "product_type": "estate",
-            "jobs": [
-                {
-                    "is_active": true,
-                    "service": "dogma",
-                    "protocol": "https://",
-                    "host": "dogma-nekretnine.com",
-                    "port": "",
-                    "prefix": "stan/odlican-stan-na-trazenoj-lokaciji3",
-                    "headers": {
-                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
-                        "Accept": "application/json, text/javascript, */*; q=0.01"
-                    }
-                }
-            ]
-        },
-        {
             "name": "Stan 56m², Belveder",
             "short_name": "Belveder 56m², Rijeka",
             "product_type": "estate",
             "jobs": [
                 {
-                    "is_active": true,
+                    "is_active": false,
                     "service": "four",
                     "protocol": "https://",
                     "host": "four-nekretnine.hr",
