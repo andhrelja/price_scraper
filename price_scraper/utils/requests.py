@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 def get(url, *args, **kwargs):
     # client = httpx.Client(http2=True)
     try:
-        response = requests.get(url, *args, **kwargs)
+        response = requests.get(url, *args, verify=False, **kwargs)
     except requests.exceptions.ConnectTimeout:
         logger.warning("Connection timeout occured for %s", url)
         return

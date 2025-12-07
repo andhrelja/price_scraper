@@ -89,7 +89,7 @@ if __name__ == "__main__":
 
     cfg = read_json(args.config_json_path)
     total_records = len(repository.Product.list())
-    for cfg in cfg["products"]:
+    for cfg in filter(lambda x: x["is_active"] is True, cfg["products"]):
         run_config(cfg)
         updated_records = len(repository.Product.list()) - total_records
         logger.info("Updated records: %s", updated_records)
